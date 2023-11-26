@@ -104,3 +104,17 @@ hessian <- vcov(lm(y ~ x1 + x2 + x3, data = df))
 se <- sqrt(diag(hessian))
 se
 
+
+
+
+# linear regression model using lm()
+lm_model <- lm(y ~ x1 + x2 + x3, data = df)
+
+# Extract estimated coefficients
+beta_hat_lm <- coef(lm_model)
+
+# Extract residual standard deviation
+sigma_hat_lm <- summary(lm_model)$sigma
+
+cat("Estimated Coefficients (beta) - lm():", beta_hat_lm, "\n")
+cat("Estimated Residual Standard Deviation (sigma) - lm():", sigma_hat_lm, "\n")
